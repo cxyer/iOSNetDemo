@@ -1,8 +1,8 @@
 # iOS网络请求
 1. NSData(基本不用)
-```
-[NSData dataWithContentsOfURL:url]
-```
+   ```
+   [NSData dataWithContentsOfURL:url]
+   ```
 2. NSURLConnection(过时的苹果原生网络框架,iOS9废弃)
     * 通过Block
        ```
@@ -14,7 +14,7 @@
        ```
        + (nullable NSURLConnection*)connectionWithRequest:(NSURLRequest *)request delegate:(nullable id)delegate
        ```
-    **NSURLConnectionDataDelegate**
+       * NSURLConnectionDataDelegate
        ```
        //接收响应
        - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -38,28 +38,28 @@
     * 通过Delegate
         * 基本步骤与通过Block的方式差不多，需要配置NSURLSessionConfiguration
 
-    **NSURLSessionDataDelegate**
-       ```
-       //接收响应
-       -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+        * NSURLSessionDataDelegate
+        ```
+        //接收响应
+        -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 
-       //NSURLSessionResponseDisposition
-       /*
-        NSURLSessionResponseCancel = 0,
-        //取消，默认
-        NSURLSessionResponseAllow = 1,
+        //NSURLSessionResponseDisposition
+        /*
+            NSURLSessionResponseCancel = 0,
+            //取消，默认
+            NSURLSessionResponseAllow = 1,
+            //接收数据
+            NSURLSessionResponseBecomeDownload = 2
+            //变成下载请求
+            NSURLSessionResponseBecomeStream
+            //变成流
+            */
+
         //接收数据
-        NSURLSessionResponseBecomeDownload = 2
-        //变成下载请求
-        NSURLSessionResponseBecomeStream
-        //变成流
-        */
-
-       //接收数据
-       - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
-       //接收完成
-       - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
-       ```
+        - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
+        //接收完成
+        - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+        ```
 
 4. AFNetworking
     * todo:分析源码
