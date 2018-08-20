@@ -134,5 +134,5 @@
         [self.client URLProtocol:self didFailWithError:error];
     }
     ```
-    其中有一个问题，canInitWithRequest返回YES的时候会调用startLoading，然后会继续调用canInitWithRequest，陷入死循环，解决方式是使用[NSURLProtocol setProperty:@YES forKey:@"XYURLProtocol" inRequest:request]然后在canInitWithRequest进行判断
+    其中有一个问题，canInitWithRequest返回YES的时候会调用startLoading，然后会继续调用canInitWithRequest，陷入死循环，解决方式是使用[NSURLProtocol setProperty:@YES forKey:@"XYURLProtocol" inRequest:request]然后在canInitWithRequest进行判断
 3. 离线缓存：可以把获得的数据进行缓存，然后在startLoading中进行判断是否使用离线缓存
