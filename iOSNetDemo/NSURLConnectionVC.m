@@ -29,22 +29,22 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.btn1 = [UIButton createNormalButtonWithFrame:CGRectMake(0, 50, 50, 50) title:@"Block" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
+    self.btn1 = [UIButton createNormalButtonWithFrame:CGRectMake(0, 100, 50, 50) title:@"Block" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
     [self.btn1 addTarget:self action:@selector(btn1Click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn1];
     
-    self.btn2 = [UIButton createNormalButtonWithFrame:CGRectMake(60, 50, 100, 50) title:@"Delegate" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
+    self.btn2 = [UIButton createNormalButtonWithFrame:CGRectMake(60, 100, 100, 50) title:@"Delegate" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
     [self.btn2 addTarget:self action:@selector(btn2Click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn2];
     
-    self.btn3 = [UIButton createNormalButtonWithFrame:CGRectMake(170, 50, 100, 50) title:@"获取缓存" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
+    self.btn3 = [UIButton createNormalButtonWithFrame:CGRectMake(170, 100, 100, 50) title:@"获取缓存" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
     [self.btn3 addTarget:self action:@selector(btn3Click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn3];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 150, 200, 200)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 200, 200, 200)];
     [self.view addSubview:self.imageView];
     
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(50, 400, 200, 2)];
+    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(50, 450, 200, 2)];
     [self.view addSubview:self.progressView];
 }
 

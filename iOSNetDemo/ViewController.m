@@ -11,7 +11,7 @@
 #import "NSDataVC.h"
 #import "NSURLConnectionVC.h"
 #import "NSURLSessionVC.h"
-
+#import "WebVC.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy)NSArray *dataArr;
@@ -21,7 +21,7 @@
 
 - (NSArray *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[@"NSData",@"NSURLConnection",@"NSURLSession"];
+        _dataArr = @[@"NSData",@"NSURLConnection",@"NSURLSession",@"NSURLProtocol"];
     }
     return _dataArr;
 }
@@ -60,7 +60,11 @@
     } else if (indexPath.row == 2) {
         NSURLSessionVC *vc = [[NSURLSessionVC alloc] init];
         [self.navigationController pushViewController:vc animated:true];
+    } else if (indexPath.row == 3) {
+        WebVC *vc = [[WebVC alloc] init];
+        [self.navigationController pushViewController:vc animated:true];
     }
 }
+
 
 @end

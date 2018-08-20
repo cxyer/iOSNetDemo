@@ -21,11 +21,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.btn = [UIButton createNormalButtonWithFrame:CGRectMake(50, 50, 50, 50) title:@"按钮" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
+    self.btn = [UIButton createNormalButtonWithFrame:CGRectMake(50, 100, 50, 50) title:@"按钮" font:nil color:[UIColor blackColor] backColor:[UIColor orangeColor]];
     [self.btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btn];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 150, 200, 200)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 200, 200, 200)];
     [self.view addSubview:self.imageView];
 }
 

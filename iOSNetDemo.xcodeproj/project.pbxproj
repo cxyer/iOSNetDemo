@@ -17,6 +17,8 @@
 		80270DD220F99E63009E75AF /* UIButton+cxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270DD120F99E63009E75AF /* UIButton+cxy.m */; };
 		80270DD620F9A407009E75AF /* NSURLConnectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270DD520F9A407009E75AF /* NSURLConnectionVC.m */; };
 		80270DD920F9AD86009E75AF /* NSURLSessionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80270DD820F9AD86009E75AF /* NSURLSessionVC.m */; };
+		80367C75212A67B4000C2824 /* XYURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 80367C74212A67B4000C2824 /* XYURLProtocol.m */; };
+		80367C78212A742B000C2824 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80367C77212A742B000C2824 /* WebVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		80270DD520F9A407009E75AF /* NSURLConnectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLConnectionVC.m; sourceTree = "<group>"; };
 		80270DD720F9AD86009E75AF /* NSURLSessionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionVC.h; sourceTree = "<group>"; };
 		80270DD820F9AD86009E75AF /* NSURLSessionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionVC.m; sourceTree = "<group>"; };
+		80367C73212A67B4000C2824 /* XYURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYURLProtocol.h; sourceTree = "<group>"; };
+		80367C74212A67B4000C2824 /* XYURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYURLProtocol.m; sourceTree = "<group>"; };
+		80367C76212A742B000C2824 /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		80367C77212A742B000C2824 /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,10 @@
 				80270DD520F9A407009E75AF /* NSURLConnectionVC.m */,
 				80270DD720F9AD86009E75AF /* NSURLSessionVC.h */,
 				80270DD820F9AD86009E75AF /* NSURLSessionVC.m */,
+				80367C73212A67B4000C2824 /* XYURLProtocol.h */,
+				80367C74212A67B4000C2824 /* XYURLProtocol.m */,
+				80367C76212A742B000C2824 /* WebVC.h */,
+				80367C77212A742B000C2824 /* WebVC.m */,
 				80270DD020F99E63009E75AF /* UIButton+cxy.h */,
 				80270DD120F99E63009E75AF /* UIButton+cxy.m */,
 				80270DBD20F99D54009E75AF /* Main.storyboard */,
@@ -163,11 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80367C75212A67B4000C2824 /* XYURLProtocol.m in Sources */,
 				80270DD220F99E63009E75AF /* UIButton+cxy.m in Sources */,
 				80270DD620F9A407009E75AF /* NSURLConnectionVC.m in Sources */,
 				80270DBC20F99D54009E75AF /* ViewController.m in Sources */,
 				80270DCF20F99DA5009E75AF /* NSDataVC.m in Sources */,
 				80270DC720F99D56009E75AF /* main.m in Sources */,
+				80367C78212A742B000C2824 /* WebVC.m in Sources */,
 				80270DB920F99D54009E75AF /* AppDelegate.m in Sources */,
 				80270DD920F9AD86009E75AF /* NSURLSessionVC.m in Sources */,
 			);
@@ -313,6 +325,7 @@
 				DEVELOPMENT_TEAM = H6N6PCG8PL;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//iOSNetDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +344,7 @@
 				DEVELOPMENT_TEAM = H6N6PCG8PL;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//iOSNetDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
