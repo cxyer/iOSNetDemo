@@ -27,17 +27,17 @@
 3. NSURLSession(现在的苹果原生网络框架)
     * 通过Block
         * 基本步骤
-            1. 创建请求对象NSURLRequest
-            2. 创建会话对象NSURLSession
-            3. 创建请求任务NSURLSessionDataTask
-            4. 执行Task
-            5. 解析
+            1. 创建会话对象NSURLSession
+            2. 创建请求任务NSURLSessionTask(有三种)
+               1. NSURLSessionDataTask
+               2. NSURLSessionUploadTask
+               3. NSURLSessionDownloadTask
+            3. 启动 resume
        ```
        - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
        ```
     * 通过Delegate
-        * 基本步骤与通过Block的方式差不多，需要配置NSURLSessionConfiguration
-
+        * 基本步骤与通过Block的方式差不多，只能在初始化的时候配置delegate
         * NSURLSessionDataDelegate
         ```
         //接收响应
