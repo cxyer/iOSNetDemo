@@ -6,8 +6,13 @@
 2. NSURLConnection(过时的苹果原生网络框架,iOS9废弃)
     * 通过Block
        ```
+       //异步
        + (void)sendAsynchronousRequest:(NSURLRequest*) request
                              queue:(NSOperationQueue*) queue
+                 completionHandler:(void (^)(NSURLResponse* _Nullable response, NSData* _Nullable data, NSError* _Nullable connectionError))
+                 
+       //同步
+       + (nullable NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse * _Nullable * _Nullable)response error:(NSError **)error
                  completionHandler:(void (^)(NSURLResponse* _Nullable response, NSData* _Nullable data, NSError* _Nullable connectionError))
        ```
     * 通过Delegate
@@ -25,6 +30,16 @@
        ```
 
 3. NSURLSession(现在的苹果原生网络框架)
+    * 后续学习补充，了解各类网络API（个人笔记）
+        1. [NSURLRequest相关API](https://github.com/cxyer/iOSNote/wiki/NSURLRequest%E7%9B%B8%E5%85%B3API)
+        1. [NSURLResponse相关API](https://github.com/cxyer/iOSNote/wiki/NSURLResponse%E7%9B%B8%E5%85%B3API)
+        1. [NSURLSessionConfiguration相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSessionConfiguration%E7%9B%B8%E5%85%B3API)
+        1. [NSURLSession代理相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSession%E4%BB%A3%E7%90%86%E7%9B%B8%E5%85%B3API)
+        1. [NSURLSession相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSession%E7%9B%B8%E5%85%B3API)
+        1. [NSURLCredential相关API
+        ](https://github.com/cxyer/iOSNote/wiki/NSURLCredential%E7%9B%B8%E5%85%B3API)
+        1. [NSURLCahce相关API](https://github.com/cxyer/iOSNote/wiki/NSURLCahce%E7%9B%B8%E5%85%B3API)
+        1. [NSURLAuthenticationChallenge以及NSURLProtectionSpace](https://github.com/cxyer/iOSNote/wiki/NSURLAuthenticationChallenge%E4%BB%A5%E5%8F%8ANSURLProtectionSpace)
     * 通过Block
         * 基本步骤
             1. 创建会话对象NSURLSession
