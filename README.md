@@ -1,11 +1,11 @@
 # iOS网络请求
 1. NSData(基本不用)
-   ```
+   ```objc
    [NSData dataWithContentsOfURL:url]
    ```
 2. NSURLConnection(过时的苹果原生网络框架,iOS9废弃)
     * 通过Block
-       ```
+       ```objc
        //异步
        + (void)sendAsynchronousRequest:(NSURLRequest*) request
                              queue:(NSOperationQueue*) queue
@@ -16,11 +16,11 @@
                  completionHandler:(void (^)(NSURLResponse* _Nullable response, NSData* _Nullable data, NSError* _Nullable connectionError))
        ```
     * 通过Delegate
-       ```
+       ```objc
        + (nullable NSURLConnection*)connectionWithRequest:(NSURLRequest *)request delegate:(nullable id)delegate
        ```
        * NSURLConnectionDataDelegate
-       ```
+       ```objc
        //接收响应
        - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
        //接收数据
@@ -31,14 +31,14 @@
 
 3. NSURLSession(现在的苹果原生网络框架)
     * 后续学习补充，了解各类网络API（个人笔记）
-        1. [NSURLRequest相关API](https://github.com/cxyer/iOSNote/wiki/NSURLRequest%E7%9B%B8%E5%85%B3API)
-        1. [NSURLResponse相关API](https://github.com/cxyer/iOSNote/wiki/NSURLResponse%E7%9B%B8%E5%85%B3API)
-        1. [NSURLSessionConfiguration相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSessionConfiguration%E7%9B%B8%E5%85%B3API)
-        1. [NSURLSession代理相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSession%E4%BB%A3%E7%90%86%E7%9B%B8%E5%85%B3API)
-        1. [NSURLSession相关API](https://github.com/cxyer/iOSNote/wiki/NSURLSession%E7%9B%B8%E5%85%B3API)
-        1. [NSURLCredential相关API
-        ](https://github.com/cxyer/iOSNote/wiki/NSURLCredential%E7%9B%B8%E5%85%B3API)
-        1. [NSURLCahce相关API](https://github.com/cxyer/iOSNote/wiki/NSURLCahce%E7%9B%B8%E5%85%B3API)
+        1. [NSURLRequest](https://github.com/cxyer/iOSNote/wiki/NSURLRequest)
+        1. [NSURLResponse](https://github.com/cxyer/iOSNote/wiki/NSURLResponse)
+        1. [NSURLSessionConfiguration](https://github.com/cxyer/iOSNote/wiki/NSURLSessionConfiguration)
+        1. [NSURLSessionDelegate](https://github.com/cxyer/iOSNote/wiki/NSURLSessionDelegate)
+        1. [NSURLSession](https://github.com/cxyer/iOSNote/wiki/NSURLSession)
+        1. [NSURLCredential
+        ](https://github.com/cxyer/iOSNote/wiki/NSURLCredential)
+        1. [NSURLCahce](https://github.com/cxyer/iOSNote/wiki/NSURLCahce)
         1. [NSURLAuthenticationChallenge以及NSURLProtectionSpace](https://github.com/cxyer/iOSNote/wiki/NSURLAuthenticationChallenge%E4%BB%A5%E5%8F%8ANSURLProtectionSpace)
     * 通过Block
         * 基本步骤
@@ -48,13 +48,13 @@
                2. NSURLSessionUploadTask
                3. NSURLSessionDownloadTask
             3. 启动 resume
-       ```
+       ```objc
        - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionHandler;
        ```
     * 通过Delegate
         * 基本步骤与通过Block的方式差不多，只能在初始化的时候配置delegate
         * NSURLSessionDataDelegate
-        ```
+        ```objc
         //接收响应
         -(void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 
@@ -82,13 +82,13 @@
 # NSURLProtocol
 可以对URL请求进行拦截，主要用于离线缓存策略
 1. 使用NSURLProtocol需要在AppDelegate中进行注册
-    ```
+    ```objc
     [NSURLProtocol registerClass:[XYURLProtocol class]];
 
     XYURLProtocol是继承NSURLProtocol的类
     ```
 2. NSURLProtocol中的方法
-    ```
+    ```objc
     //所有的NSURLConnection都会通过这个方法
     + (BOOL)canInitWithRequest:(NSURLRequest *)request {
         NSLog(@"%s",__func__);
