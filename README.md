@@ -30,7 +30,7 @@
        ```
 
 3. NSURLSession(现在的苹果原生网络框架)
-    * 后续学习补充，了解各类网络API（个人笔记）
+    * 后续学习补充，了解各类网络API，仅仅是熟悉，有些api不知道怎么做demo。。
         1. [NSURLRequest](https://github.com/cxyer/iOSNote/wiki/NSURLRequest)
         1. [NSURLResponse](https://github.com/cxyer/iOSNote/wiki/NSURLResponse)
         1. [NSURLSessionConfiguration](https://github.com/cxyer/iOSNote/wiki/NSURLSessionConfiguration)
